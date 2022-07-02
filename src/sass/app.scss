@@ -1,0 +1,180 @@
+@use './abstracts/' as a;
+
+body {
+    background: a.$bgc;
+    background-size: cover;
+    padding: 0 5%; 
+
+    .app {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 2rem;
+        background: a.$mbgc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .tog-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 200px;
+            margin: 5% auto;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 10px;
+            background: a.$btnc2;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            &:hover {
+                background: a.$btnc1;
+            }
+
+            &:active {
+                transform: scale(0.9);
+            }
+
+            &:hover {
+                transform: scale(1.05);
+                transition: all 0.5s ease-in-out;
+            }
+            
+            &:not(:hover) {
+                transform: scale(1);
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+        .active-btn {
+            background: a.$btnc1;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-in-out;
+
+            // &:active {
+            //     max-height: 0;
+            //     transition: max-height 0.5s ease-in-out;
+            // }
+
+
+            label {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+                text-align: left;
+            }
+
+            input {
+                height: 35px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 0 10px;
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .sub-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 3% auto 6% auto;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 10px;
+                background: rgb(55, 227, 55);
+                color: rgb(255, 0, 217);
+                font-size: 1.2rem;
+                cursor: pointer;
+    
+                &:hover {
+                    background: rgb(0, 255, 0);
+                    transform: scale(1.05);
+                    transition: all 0.5s ease-in-out;
+                }                
+
+                &:not(:hover) {
+                    transform: scale(1);
+                    transition: all 0.5s ease-in-out;
+                }
+
+                &:active {
+                    transform: scale(0.9);
+                }
+            }
+        }
+
+        
+
+        .note {
+            position: relative;
+            width: 100%;
+            margin: 5% auto;
+            background: #fff;
+            padding: 10px;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            
+            h2 {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+                margin-right: 10%;
+                text-align: left;
+                word-wrap: break-word;
+            }
+
+            h3 {
+                font-size: 0.9rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+                text-align: left;
+            }
+
+            .delete {
+                position: absolute;
+                top: calc((100% - 16px)/2);
+                right: 5%;
+                transform: scale(1.5);
+                cursor: pointer;
+                color: rgb(255, 0, 13);
+
+                &:hover {
+                    transform: scale(2);
+                    transition: all 0.5s ease-in-out;
+                }
+                
+                &:not(:hover) {
+                    transform: scale(1.5);
+                    transition: all 0.5s ease-in-out;
+                }    
+            }
+
+            &:hover {
+                transform: scale(1.05);
+                transition: all 0.5s ease-in-out;
+            }
+            
+            &:not(:hover) {
+                transform: scale(1);
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+    }
+}

@@ -27,8 +27,14 @@ function App() {
     document.querySelector(".tog-btn").classList.toggle("active-btn");
 
     if (document.querySelector(".tog-btn").classList.contains("active-btn")) {
+      document.querySelector(".tog-btn").textContent = "Hide Add Task Bar";
+      document.querySelector(".tog-btn").style.color = "white";
+      document.querySelector(".tog-btn").style.backgroundColor = "#FE0100";
       document.querySelector(".form").style.maxHeight = "500px";
     } else {
+      document.querySelector(".tog-btn").textContent = "Show Add Task Bar";
+      document.querySelector(".tog-btn").style.backgroundColor = "rgb(55, 227, 55)";
+      document.querySelector(".tog-btn").style.color = "black";
       document.querySelector(".form").style.maxHeight = "0";
     }
   }
@@ -51,7 +57,7 @@ function App() {
   return (
     <div className="app" ref={animationParent}>
       <h1 className="header">Task Tracker</h1>
-      <Button className="tog-btn" onClick={handleButtonClick}>Close Add Task Bar</Button>
+      <Button className="tog-btn" onClick={handleButtonClick}>Show Add Task Bar</Button>
       <Form onSubmit={handleSubmit}/>
       {notes.length !== 0 ?
         notes.map((note) => (

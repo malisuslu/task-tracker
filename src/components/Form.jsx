@@ -8,13 +8,17 @@ function Form({ onSubmit }) {
         dateTime: "",
     });
 
-    function handleSubmit(e) { 
-        e.preventDefault();
-        onSubmit(note);
-        setNote({
-            task: "",
-            dateTime: "",
-        });
+    function handleSubmit(e) {
+        let task = document.getElementById("task");
+        let datetime = document.getElementById("daytime");
+        if (task.value !== "" && datetime.value !== "") {
+            onSubmit(note);
+            setNote({
+                task: "",
+                dateTime: "",
+            });
+            e.preventDefault();
+        }
     }
     
     return (
@@ -26,6 +30,7 @@ function Form({ onSubmit }) {
                 placeholder="Add Task"
                 value={note.task}
                 onChange={(e) => setNote({ ...note, task: e.target.value })}
+                required={true}
             />
             <Input
                 type="datetime-local"
@@ -34,6 +39,7 @@ function Form({ onSubmit }) {
                 placeholder="Add Day & Time"
                 value={note.dateTime}
                 onChange={(e) => setNote({ ...note, dateTime: e.target.value.split("T").join(" ")})}
+                required={true}
             />
             <Button className="sub-btn" onClick={handleSubmit}>Save Task</Button>
         </form>

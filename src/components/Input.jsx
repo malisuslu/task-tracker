@@ -10,6 +10,7 @@ function Input({ type, id, label, placeholder, value, onChange }) {
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
+                required
             />
         </>
     );

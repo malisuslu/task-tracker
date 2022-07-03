@@ -28,7 +28,7 @@ body {
             max-width: 200px;
             margin: 5% auto;
             padding: 5px 10px;
-            border: none;
+            border: 1px solid a.$bgc;
             border-radius: 10px;
             background: a.$btnc2;
             color: #fff;
@@ -96,7 +96,7 @@ body {
                 border: none;
                 border-radius: 10px;
                 background: rgb(55, 227, 55);
-                color: rgb(255, 0, 217);
+                color: rgb(255, 255, 255);
                 font-size: 1.2rem;
                 cursor: pointer;
     
